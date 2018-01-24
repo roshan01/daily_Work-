@@ -1,6 +1,12 @@
-div#navbar
+
+body
 {
-	background-color:blue;
+  margin: 0px;
+  padding:0px;
+}
+  div#navbar
+  {
+	background-color:#80ffff;
 	overflow: hidden;
 	color:#fff;
 
@@ -10,15 +16,64 @@ li
 	float: left;
 	padding:12px;
 	display:block;
-	font-size:20px;
 }
 li a {
-	font-size: 25px;
-	margin: 14px 16px;
-	color:#fff;
+	font-size: 20px;
+	margin:10px auto;
+	color:black;
 	text-decoration: none;
 	transition: color ease-in-out 1s;
 }
 li a:hover{
-	color:#333;
+	color:#4d4dff;
+}
+a.active
+{
+  background-color:#aaff80;
+  color:#4d4dff;
+}
+#logo
+{
+  height: 30px;
+  width: 50px;
+
+}
+#from{
+  text-align: center;
+  padding: 14px;
+  background-color: burlywood;
+  width: 482px;
+  margin-left: 425px;
+  font-size: 23px;
+}
+header{
+  font-size: 40px;
+color: #0d5252;
+border: 1px solid;
+}
+input
+{
+  font-size: 20px;
+}
+label
+{
+  font-size: 24px;
+
+}
+#Content{
+      margin: 10px auto;
+}
+button
+{
+  font-size: 25px;
+border-radius: 50px;
+background-color: #6864ce;
+color: #ffff;
+border:none;
+}
+#footer
+{
+  text-align: center;
+background-color: #66ccff;
+font-size: 20px;
 }
