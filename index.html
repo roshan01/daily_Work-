@@ -8,11 +8,93 @@
 <body>
 <div id="navbar">
 	<ul>
-		<li><a href="#">Home</a></li>
+    <li><span><img id="logo" src="image/logo.png"></img></span>
+		<li><a href="#" class="active">Home</a></li>
 		<li><a href="#">Services</a></li>
 		<li><a href="#"><a href="#">product</a></li>
 		<li><a href="#">Contact Us!</a></li>
 	</ul>
 </div>
+
+<div id="Content">
+	<div id="from">
+	<form name="registrationform">
+		<header>
+			Registration Form!
+		</header><br>
+		<label>Name:</label>
+		<input type="text" name="name" id="name" value="" placeholder="enter user name"><span class="error_name"></span><br><br>
+		<label for="email">Email:</label>
+		<input type="email" name="email" id="email" value="" placeholder="enter email" ><span class="error_email"></span><br><br>
+		<label for="Address">Address:</label>
+	<textarea name="address"rows="3" cols="35" id="address"></textarea><br><br>
+		<label for="Contact">Contact:</label>
+		<input type="Contact" name="contact" value="" placeholder="enter contact" id="contact"><span class="error_contact"></span><br><br>
+		<!-- <button type="Submit" name="Submit" value="Submit">Submit</button> -->
+		<input type="submit" value= "submit">
+
+	</form>
+</div>
+   <p id="output"></p>
+</div>
+<div id="footer">
+	<footer>
+  <p>Posted by: lorem</p>
+  <p><a href="mailto:someone@example.com">Contact Us</a></p>
+</footer>
+</div>
+<!--Javascript code-->
+<script type="text/javascript">
+
+
+	// if(submit=="Submit")
+	// {
+	// 	if(Name !="" & email !="" & contact !="")
+	// 	{
+	// 		//do nothing!
+	// 		document.getElementById("output").innerHTML ="name:"+Name +"email:"+email +"contact:"+contact + "address:" +address;
+	// 	}
+	// 	else {
+	// 		alert("please fill the details");
+  //
+	// 	}
+  //
+	// }
+	// // console.log("kjdhskfjh");
+
+		const submit = document.querySelector('input[type="submit"]');
+
+		submit.addEventListener("click", function(e){
+
+			const name=document.registrationform.name.value;
+			const email=document.registrationform.email.value;
+			const contact=document.registrationform.contact.value;
+			const address=document.registrationform.address.value;
+			const error_name = document.querySelector('span.error_name');
+			const error_email = document.querySelector('span.error_email');
+			const error_address = document.querySelector('span.error_contact');
+
+
+			if(name.length == 0){
+				// alert("name Not Enter ");
+				error_name.innerHTML = "Name not Enter";
+         e.preventDefault();
+			}
+
+			else if(email.match('[/^a-z A-z ? 0-9]+\@+\w*\.+(com|co.in|co|net)*$/'))
+			{
+				error_email.innerHTML = "Plz Enter Valid Email";
+				   e.preventDefault();
+			}
+
+
+
+});
+
+
+
+</script>
+
+
 </body>
 </html>
