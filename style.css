@@ -1,0 +1,24 @@
+div#navbar
+{
+	background-color:blue;
+	overflow: hidden;
+	color:#fff;
+
+}
+li
+{
+	float: left;
+	padding:12px;
+	display:block;
+	font-size:20px;
+}
+li a {
+	font-size: 25px;
+	margin: 14px 16px;
+	color:#fff;
+	text-decoration: none;
+	transition: color ease-in-out 1s;
+}
+li a:hover{
+	color:#333;
+}
