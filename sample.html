@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js function testing</title>
+	<meta charset="utf-8">
+
+</head>
+<body>
+<form>
+	First Name:<input type="text" name="firstname" id="fname"><span id="fname_error"></span><br><br>
+	Last Name:<input type="text" name="lastname" id="lname"><span id="lname_error"></span><br><br>
+	<legend>
+		Gender:<input type="radio" name="gender" checked="checked">Male
+		<input type="radio" name="gender">Female
+	</legend>
+	Adresss:<textarea name="address" id="Adresss"></textarea> <span id="addr_error"></span><br><br>
+	Pincode:<input type="text" name="pincode" id="pincode"><span id="pin_error"></span><br><br>
+	State:<select name="city" id="city">
+		<option value="-1">Select.</option>
+		<option value="mumbai">Mumbai</option>
+		<option value="pune">Pune</option>
+	</select> <span id="city_error"></span><br><br>
+	<input type="checkbox" name="c1" value="c1" id="c1"/>Im Not Bot.<span id="check_error"></span><br><br>
+	<input type="Submit" name="submit" value="Submit" onclick="return validateForm()">
+</form>
+<script>
+	
+	const inputfname =document.getElementById("fname");
+	const inputlname =document.getElementById("lname");
+	const inputaddr  =document.getElementById("Adresss");
+	const inputpin   =document.getElementById("pincode");
+	const inputcity  =document.getElementById("city");
+	const inputcheck =document.getElementById("c1");
+
+
+	function validateForm(event)
+	{
+	
+
+
+if(inputfname.value=="" || inputfname.value=="null")
+{
+document.getElementById('fname_error').innerHTML="First Name cannot be blank";
+return false;
+}
+/*else if (inputfname.value!="") {
+	let pattern="/^[0-9]+$/";
+	inputfname.value=inputlname.value.replace(pattern,"");
+	document.getElementById('fname_error').innerHTML="only alphabets are allowed";
+	return false;
+	}*/
+
+
+if(inputlname.value=="" || inputlname.value=="null")
+{
+document.getElementById('lname_error').innerHTML="Last Name cannot be blank";
+return false;
+}
+if(inputaddr.value=="" || inputaddr.value=="null")
+{
+document.getElementById('addr_error').innerHTML="Adresss cannot be blank";
+return false;
+}
+if(inputpin.value=="" || inputpin.value=="null")
+{
+document.getElementById('pin_error').innerHTML="Pincode cannot be blank";
+return false;
+}
+
+if(inputcity.value =="-1")
+{
+document.getElementById('city_error').innerHTML="Select aleast one city Name";
+return false;
+}
+if(inputcheck.checked==false)
+{
+document.getElementById('check_error').innerHTML="plz check the checkbox";
+return false;
+}
+}
+inputfname.addEventListener('keypress',(e)=>{
+		if(!isNaN(e.key)){
+			inputfname.value.replace(/[0-9]$/,"");
+			document.getElementById('fname_error').innerHTML="only alphabets are allowed";
+			e.preventDefault();
+			return false;
+		}
+	});
+	inputlname.addEventListener('keypress',(e)=>{
+		if(!isNaN(e.key)){
+			//inputlname.value = null;
+			document.getElementById('lname_error').innerHTML="only alphabets are allowed";
+			e.preventDefault();
+			return false;
+		}
+	});
+inputpin.addEventListener('keypress',(e)=>{
+		if(isNaN(e.key)){
+			//inputlname.value = null;
+			document.getElementById('pin_error').innerHTML="only number are allowed";
+			e.preventDefault();
+			return false;
+		}
+	});
+
+
+	
+</script>
+</body>
+</html>
